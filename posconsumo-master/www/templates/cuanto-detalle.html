@@ -1,0 +1,44 @@
+<div class="btnVolver">
+    <button class="button button-green btnRgis" onclick="Volver()">Volver</button>
+</div>
+<div>
+    <div class="content-section">
+                <label class="h1TitBlanco left-text">{{categoria|uppercase}}</label>
+                <!--<em class="left-text">{{categoria.descripcion}}</em>-->
+                <div class="overlay"></div>
+                <img class="responsive-image" src="img/campanias/campanias.png" alt="{{categoria|uppercase}}">
+            </div>
+
+
+    <div class="content">
+        <label class="h1Negro center-text">¿Cuánto recolectas para beneficiar el mundo?</label>
+    </div>
+
+    <div class="decoration"></div>
+
+    <div class="content" id="contador">
+        <div style="padding:13px;" ng-click="cantidad = cantidad+1">
+            <img src="libs/theme/code/images/lists/up_48.png" alt="Aumentar unidades de {{categoria|uppercase}} que ha recolectado">
+        </div>
+
+        <div class="cantidad"><input type="text" id="cantTxt" value="{{cantidad}}"  ng-keyup="calcularValor()" ng-init="cantidad=0" maxlength="5"></div>
+
+        <div style="padding:13px;" ng-click="cantidad = cantidad-1" ng-show="cantidad>0">
+            <img src="libs/theme/code/images/lists/down_48.png" alt="Disminuir unidades de {{categoria|uppercase}} que ha recolectado">
+        </div>
+    </div>
+
+    <div>
+        <div class="big-notification blue-notification">
+            <label class="uppercase" ng-show="cantidad > 0">Si recolectaste {{cantidad}} unidades... </label> <label class="uppercase"> ¿Qué estás logrando con ésto?</label>
+            <p class="center-text uppercase" ng-show="cantidad >= puntaje.min && cantidad <= puntaje.max" ng-repeat="puntaje in puntajes">
+                {{puntaje.mensaje}}
+            </p>
+            <p class="center-text uppercase" ng-show="cantidad <= 0">
+                Empieza a reciclar estos productos y verás el beneficio que generas en el mundo
+            </p>
+        </div>
+    </div>
+
+    <div class="decoration"></div>
+</div>
