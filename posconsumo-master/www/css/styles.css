@@ -692,3 +692,8 @@ display: none;
     text-align: justify;
     margin-top: 20px;
 }
+
+.centrado {
+    text-align: center;
+    margin-top: 20px;
+}
